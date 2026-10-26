@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f766e">
+  <title>Kulam 2.0 | Community Water Watch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Kulam 2.0 home">
+      <span class="brand-mark">◉</span>
+      <span>Kulam<span class="brand-accent"> 2.0</span><small>COMMUNITY WATER WATCH</small></span>
+    </a>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#report">Report an issue</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+    <a class="nav-cta" href="#report">+ New report</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> DEMO • SAMPLE DATA ONLY</div>
+        <h1>Keep our <span>kulams</span><br>clean, safe & alive.</h1>
+        <p>A community-powered waterbody watch platform. Report problems, view simulated sensor readings, and help your local lake get the attention it deserves.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#report">Report a problem <span>↗</span></a>
+          <a class="button button-ghost" href="#dashboard">Explore dashboard ↓</a>
+        </div>
+        <div class="trust-note"><span>✓</span> Built for community participation <span>•</span> No real sensors connected</div>
+      </div>
+      <div class="hero-visual">
+        <div class="sun"></div>
+        <div class="hill hill-back"></div>
+        <div class="hill hill-front"></div>
+        <div class="water">
+          <div class="water-line line1"></div><div class="water-line line2"></div><div class="water-line line3"></div>
+        </div>
+        <div class="reed reed1"></div><div class="reed reed2"></div><div class="reed reed3"></div>
+        <div class="sensor-card">
+          <div class="sensor-head"><span class="sensor-icon">⌁</span><div><b>Demo sensor node</b><small>Simulated IoT feed</small></div><span class="status-pill">ONLINE*</span></div>
+          <div class="sensor-values"><div><small>Water level</small><b id="heroLevel">68 <em>%</em></b></div><div><small>Water quality</small><b id="heroQuality">Good</b></div></div>
+          <small class="sensor-foot">*Simulation only · refreshes locally</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice"><span class="notice-icon">ⓘ</span><div><b>Hackathon prototype</b><p>This demo uses sample reports and simulated sensor values stored in your browser. It does not connect to government systems or physical IoT devices.</p></div></section>
+
+    <section id="dashboard" class="section">
+      <div class="section-heading"><div><div class="eyebrow">LIVE DEMO OVERVIEW</div><h2>Waterbody dashboard</h2><p class="section-subtitle">A quick view of community reports and simulated sensor readings.</p></div><button class="button button-outline" id="refreshSensors">↻ Refresh demo sensors</button></div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon teal">◉</span><small>Community reports</small><strong id="totalReports">04</strong><span class="stat-caption">Across demo locations</span></article>
+        <article class="stat-card"><span class="stat-icon orange">⚑</span><small>Needs attention</small><strong id="openReports">02</strong><span class="stat-caption">Open sample reports</span></article>
+        <article class="stat-card"><span class="stat-icon blue">≈</span><small>Average water level</small><strong id="avgLevel">68%</strong><span class="stat-caption">Simulated sensor reading</span></article>
+        <article class="stat-card"><span class="stat-icon purple">✦</span><small>AI triage summary</small><strong id="aiPriority">Medium</strong><span class="stat-caption">Rule-based demo estimate</span></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="panel sensor-panel">
+          <div class="panel-title"><div><h3>Simulated IoT monitoring</h3><p>Sample readings — not real-time measurements</p></div><span class="live-label"><span class="live-dot"></span> DEMO FEED</span></div>
+          <div class="sensor-grid">
+            <div class="reading"><span class="reading-icon">◉</span><div><small>Water level</small><strong id="waterLevel">68%</strong><span class="reading-state normal" id="levelState">Normal range</span></div></div>
+            <div class="reading"><span class="reading-icon">♧</span><div><small>Water quality index</small><strong id="waterQuality">Good</strong><span class="reading-state normal" id="qualityState">Within demo target</span></div></div>
+            <div class="reading"><span class="reading-icon">☀</span><div><small>Temperature</small><strong id="temperature">28.4°C</strong><span class="reading-state normal">Sample value</span></div></div>
+            <div class="reading"><span class="reading-icon">≋</span><div><small>Turbidity</small><strong id="turbidity">12 NTU</strong><span class="reading-state normal" id="turbidityState">Low demo reading</span></div></div>
+          </div>
+          <div class="sensor-disclaimer">Values change when you refresh the demo. They are generated locally and must not be used for safety decisions.</div>
+        </article>
+        <article class="panel location-panel">
+          <div class="panel-title"><div><h3>Demo waterbodies</h3><p>Example locations for presentation</p></div><span class="count-chip">03 places</span></div>
+          <div class="location-item"><span class="location-pin">⌖</span><div class="location-info"><b>Periya Kulam</b><small>Kovilpatti · Demo location</small><div class="mini-meter"><span style="width:68%"></span></div></div><span class="quality-tag good">Good</span></div>
+          <div class="location-item"><span class="location-pin">⌖</span><div class="location-info"><b>Temple Tank</b><small>Sample location · Not verified</small><div class="mini-meter"><span class="meter-warn" style="width:42%"></span></div></div><span class="quality-tag watch">Watch</span></div>
+          <div class="location-item"><span class="location-pin">⌖</span><div class="location-info"><b>Village Lake</b><small>Sample location · Not verified</small><div class="mini-meter"><span style="width:76%"></span></div></div><span class="quality-tag good">Good</span></div>
+          <p class="location-foot">Locations and readings are illustrative sample data.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="report" class="section report-section">
+      <div class="section-heading"><div><div class="eyebrow">YOUR VOICE MATTERS</div><h2>Report a waterbody issue</h2><p class="section-subtitle">Share a concern so the community can see it in this demo.</p></div></div>
+      <div class="report-layout">
+        <form id="reportForm" class="panel report-form">
+          <div class="form-row"><label for="reporter">Your name <span>(optional)</span></label><input id="reporter" name="reporter" maxlength="60" placeholder="e.g. Community volunteer"></div>
+          <div class="form-row"><label for="location">Waterbody / location <span class="required">*</span></label><select id="location" name="location" required><option value="">Choose a demo location</option><option>Periya Kulam, Kovilpatti</option><option>Temple Tank (sample)</option><option>Village Lake (sample)</option><option>Other / not listed</option></select></div>
+          <div class="form-row"><label for="issueType">Issue type <span class="required">*</span></label><select id="issueType" name="issueType" required><option value="">Select issue</option><option>Garbage / plastic waste</option><option>Water looks polluted</option><option>Low water level</option><option>Blocked inlet / outlet</option><option>Dead fish / unusual smell</option><option>Other concern</option></select></div>
+          <div class="form-row"><label for="severity">How urgent is it?</label><div class="severity-options"><label><input type="radio" name="severity" value="Low"> <span class="severity-dot low"></span> Low</label><label><input type="radio" name="severity" value="Medium" checked> <span class="severity-dot medium"></span> Medium</label><label><input type="radio" name="severity" value="High"> <span class="severity-dot high"></span> High</label></div></div>
+          <div class="form-row"><label for="description">Describe the issue <span class="required">*</span></label><textarea id="description" name="description" rows="4" maxlength="600" required placeholder="What did you notice? Please do not include private information."></textarea><small class="field-hint">Maximum 600 characters. Do not enter sensitive personal data.</small></div>
+          <button class="button button-primary submit-button" type="submit">Submit demo report <span>→</span></button>
+          <p class="privacy-note">Demo only: report stays in this browser and is not sent to an authority.</p>
+        </form>
+        <aside class="panel ai-panel">
+          <div class="ai-badge">✦ AI-INSPIRED DEMO</div><h3>Smart report triage</h3><p>After you submit, a simple keyword-and-severity rule will suggest a priority and next step. This is not a real AI model.</p>
+          <div class="triage-example"><span class="triage-icon">⚑</span><div><b>Example: plastic waste</b><p>Suggested priority: Medium</p><small>Suggested action: Community cleanup review</small></div></div>
+          <div class="triage-example"><span class="triage-icon">!</span><div><b>Example: dead fish / strong smell</b><p>Suggested priority: High</p><small>Suggested action: Request prompt local inspection</small></div></div>
+          <div class="safety-box"><b>Safety reminder</b><p>Do not enter the water or touch unknown waste. For urgent hazards, contact the appropriate local authority directly.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section reports-section">
+      <div class="section-heading"><div><div class="eyebrow">COMMUNITY ACTIVITY</div><h2>Recent reports</h2><p class="section-subtitle">Sample reports plus reports submitted during this browser session.</p></div><button class="text-button" id="clearDemo">Reset demo reports</button></div>
+      <div id="reportsList" class="reports-list" aria-live="polite"></div>
+    </section>
+
+    <section id="how-it-works" class="section how-section">
+      <div class="eyebrow">FROM OBSERVATION TO ACTION</div><h2>How Kulam 2.0 works</h2>
+      <div class="steps-grid"><article><span>01</span><h3>Community reports</h3><p>Residents describe visible issues and select a waterbody.</p></article><article><span>02</span><h3>Smart triage</h3><p>A demo rule suggests urgency and a practical next step.</p></article><article><span>03</span><h3>Sensor awareness</h3><p>Simulated IoT cards show how future sensors could be displayed.</p></article><article><span>04</span><h3>Shared visibility</h3><p>A simple dashboard helps a team review reports in one place.</p></article></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">◉</span><span>Kulam<span class="brand-accent"> 2.0</span></span></a><p>Community waterbody awareness prototype · Built for a hackathon</p><p class="footer-note">Demo data only. No physical IoT device, external AI API, or backend is connected.</p></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
